@@ -8,11 +8,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
 
-      # - name: Test repo
-      #   uses: carlos8v/jest-evaluator-action-test@v1
+      - name: Test repo
+        uses: carlos8v/jest-evaluator-action-test@v1
 
-      - name: Comment PR
-        uses: thollander/actions-comment-pull-request
-        with:
-          message: 'Test'
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Comment PR
+      #   uses: thollander/actions-comment-pull-request
+      #   with:
+      #     message: 'Test'
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
