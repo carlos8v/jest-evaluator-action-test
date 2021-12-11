@@ -9,10 +9,8 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Test repo
-        uses: carlos8v/jest-evaluator-action-test@v1
+        id: evaluator
+        uses: carlos8v/jest-evaluator-action@v1.1
 
-      - name: Comment PR
-        uses: thollander/actions-comment-pull-request
-        with:
-          message: ${{ steps.evaluator.outputs.result }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Output result
+        run: echo "The result was ${{ steps.evaluator.outputs.result }}"
