@@ -12,8 +12,11 @@ jobs:
         id: evaluator
         uses: carlos8v/jest-evaluator-action@v1
 
-      - name: Comment PR
-        uses: thollander/actions-comment-pull-request
-        with:
-          message: ${{ steps.evaluator.outputs.result }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Output result
+        run: echo "The time was ${{ steps.evaluator.outputs.result }}"
+
+      # - name: Comment PR
+      #   uses: thollander/actions-comment-pull-request
+      #   with:
+      #     message: ${{ steps.evaluator.outputs.result }}
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
